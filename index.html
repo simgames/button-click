@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Button Click</title>
+  </head>
+  <body>
+    <div><button>Button</button></div>
+    <div><b>Clicks </b><span id="clicks">0</span></div>
+    <script>
+    var clicks = localStorage.getItem("clicks") | 0;
+    
+    document.getElementsByTagName("button")[0].onclick = function() {
+      clicks++;
+      document.getElementById("clicks").innerHTML = clicks;
+    };
+    </script>
+  </body>
+</html>
