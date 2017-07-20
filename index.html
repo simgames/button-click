@@ -12,6 +12,7 @@
     document.getElementsByTagName("button")[0].onclick = function() {
       clicks++;
       document.getElementById("clicks").innerHTML = clicks;
+      localStorage.setItem("clicks", clicks);
     };
     </script>
   </body>
