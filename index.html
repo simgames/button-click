@@ -8,19 +8,25 @@
     <div><button style="display:none">5</button></div>
     <div><b>Clicks </b><span id="clicks">0</span></div>
     <script>
-    var clicks = localStorage.getItem("clicks") | 0;
-    document.getElementById("clicks").innerHTML = clicks;
+      var clicks = localStorage.getItem("clicks") | 0;
+    
+      function update() {
+        document.getElementById("clicks").innerHTML = clicks;
+        localStorage.setItem("clicks", clicks);
+        if(clicks > 9)
+          document.getElementsByTagName("button")[1].style.display = "none";
+      }
       
+      update ();
+    
     document.getElementsByTagName("button")[0].onclick = function() {
       clicks++;
-      document.getElementById("clicks").innerHTML = clicks;
-      localStorage.setItem("clicks", clicks);
+      update ();
     };
     
     document.getElementsByTagName("button")[1].onclick = function() {
       clicks += 5;
-      document.getElementById("clicks").innerHTML = clicks;
-      localStorage.setItem("clicks", clicks);
+      update ();
     };
     </script>
   </body>
