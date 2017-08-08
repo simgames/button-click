@@ -15,20 +15,20 @@
         document.getElementById("clicks").innerHTML = clicks;
         localStorage.setItem("clicks", clicks);
         if(clicks > 9)
-          document.getElementsByTagName("button")[1].style.display = "none";
+          document.getElementsByTagName("button")[1].style.display = "block";
       }
       
       update ();
     
-    document.getElementsByTagName("button")[0].onclick = function() {
-      clicks++;
-      update ();
-    };
-    
-    document.getElementsByTagName("button")[1].onclick = function() {
-      clicks += 5;
-      update ();
-    };
+      document.getElementsByTagName("button")[0].onclick = function() {
+        clicks++;
+        update ();
+      };
+
+      document.getElementsByTagName("button")[1].onclick = function() {
+        clicks += 5;
+        update ();
+      };
     </script>
   </body>
 </html>
