@@ -8,8 +8,7 @@
     </style>
   </head>
   <body>
-    <div><button>1</button></div>
-    <div><button style="display:none">5</button></div>
+    <div><button>1</button><button style="display:none">5</button><button style="display:none" id="add100">100</div></div>
     <div><b>Clicks </b><span id="clicks">0</span></div>
     <script>
       var clicks = localStorage.getItem("clicks") | 0;
@@ -32,6 +31,11 @@
         clicks += 5;
         update ();
       };
+      
+      document.getElementById("add100").onclick = function() {
+        clicks += 100;
+        update();
+      }
     </script>
   </body>
 </html>
