@@ -18,6 +18,8 @@
         localStorage.setItem("clicks", clicks);
         if(clicks > 9)
           document.getElementsByTagName("button")[1].style.display = "inline-block";
+        if(clicks > 99)
+          document.getElementById("add100").style.display = "inline-block";
       }
       
       update ();
